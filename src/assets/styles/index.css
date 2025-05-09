@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+    --text-color: #56596A;
+    --border-color: #D6D6D6;
+    --main-bg: #F4F4FA;
+    --primary-color: #5439AC;
+    --error-bg: #F6DEE5;
+    --success-bg: #DEF1F6;
+    --error-color: #E54660;
+    --success-color: #39AC65;
+}
+
+
+.dark-theme {
+
+    --text-color: #ff0000;
+    --border-color: #ff0000;
+    --main-bg: #ff0000;
+    --primary-color: #ff0000;
+    --error-bg: #ff0000;
+    --success-bg: #ff0000;
+    --error-color: #ff0000;
+    --success-color: #ff0000;
+}
+
+
+    body {
+        font-family: YekanBakh, sans-serif !important;
+    }
