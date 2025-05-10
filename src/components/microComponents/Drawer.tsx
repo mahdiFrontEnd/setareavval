@@ -1,4 +1,6 @@
 import React, {useRef, useState} from 'react';
+import IconClose from "./icons/IconClose.tsx";
+import Button from "./Button.tsx";
 
 type DrawerProps = {
     trigger: React.ReactNode;
@@ -57,9 +59,9 @@ const Drawer: React.FC<DrawerProps> = ({trigger, children}) => {
                 {trigger}
             </div>
             {isOpen && (
-                <div
-                    className="max-w-md m-auto fixed inset-0 bg-black/40 z-40"
-                    onClick={() => setIsOpen(false)}
+                <div style={{backgroundColor: "#00000012"}}
+                     className="max-w-md m-auto fixed inset-0  backdrop-blur-xs  z-40"
+                     onClick={() => setIsOpen(false)}
                 />
             )}
 
@@ -68,12 +70,23 @@ const Drawer: React.FC<DrawerProps> = ({trigger, children}) => {
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
-                className={`max-w-md m-auto fixed left-0 right-0 bottom-0 min-h-[200px] bg-white rounded-t-2xl shadow-xl z-50 p-4 transition-transform duration-300 ${
+                className={`max-w-md m-auto fixed left-0 right-0 bottom-0
+                  bg-contentBg rounded-t-2xl shadow-light
+                   z-50  px-[20px] py-[18px]
+                 transition-transform duration-300 ${
                     isOpen ? 'translate-y-0' : 'translate-y-full'
                 } touch-none`}
             >
-                <div className="w-12 h-1 bg-gray-400 rounded mx-auto mb-4"/>
-                {children}
+
+                <Button variant="ghost" className="absolute top-[16px]  right-[20px]"
+                        onClick={() => setIsOpen(false)}><IconClose/></Button>
+                <div className="w-[60px] h-1 bg-borderColor rounded mx-auto"/>
+
+                <div className="min-h-[170px]  py-[30px]">
+                    {children}
+                </div>
+                <div className="w-[134px] h-1 bg-gray-400 rounded mx-auto"/>
+
             </div>
         </>
     );

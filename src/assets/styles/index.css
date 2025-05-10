@@ -7,7 +7,9 @@
     --text-color: #56596A;
     --border-color: #D6D6D6;
     --main-bg: #F4F4FA;
+    --content-bg: white;
     --primary-color: #5439AC;
+    --secondary-color: #5439AC;
     --error-bg: #F6DEE5;
     --success-bg: #DEF1F6;
     --error-color: #E54660;
@@ -17,17 +19,19 @@
 
 .dark-theme {
 
-    --text-color: #ff0000;
-    --border-color: #ff0000;
-    --main-bg: #ff0000;
-    --primary-color: #ff0000;
-    --error-bg: #ff0000;
-    --success-bg: #ff0000;
-    --error-color: #ff0000;
-    --success-color: #ff0000;
+    --text-color: white;
+    --border-color: white;
+    --main-bg: #303030;
+    --content-bg: #202020;
+    --primary-color: white;
+    --secondary-color:#57C5D0;
+
+    --error-bg: #4B3337;
+    --success-bg: #334647;
 }
 
 
-    body {
-        font-family: YekanBakh, sans-serif !important;
-    }
+body * {
+    font-family: IranYekan, serif !important;
+    color: var(--text-color);
+}

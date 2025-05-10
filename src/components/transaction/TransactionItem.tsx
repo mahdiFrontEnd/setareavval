@@ -10,31 +10,33 @@ type TransactionItemPropsType = {
 const TransactionItem = ({data}: TransactionItemPropsType) => {
     return (
         <Card>
-            <div className="px-3 h-[97px]">
-                <div className="flex justify-between items-center py-3">
+            <div className="relative">
+                <div className="flex justify-between items-center p-3">
                     <span className="text-sm">{data.title}</span>
                     {
                         data.status ?
-                            <div>
-                                <span>کد پیگیری:</span>
+                            <div className="font-light text-xs">
+                                <span className="me-1">کد پیگیری:</span>
                                 <span>{data.tracking_code}</span>
                             </div>
                             :
                             <StatusBox/>
-
                     }
 
                 </div>
 
-                <hr className="text-gray-300"/>
+                <div className="px-3">
+                    <div className={`rounded-l-xl h-[24px] w-[4px] absolute top-[40px] right-0 ${data.status ? "bg-successColor " : "bg-errorColor "} `}></div>
+                    <hr className=" text-borderColor"/>
+                </div>
 
-                <div className="grid grid-cols-3 items-center py-3">
+                <div className="grid grid-cols-3 items-center p-3">
 
                     <div className="flex items-center gap-1">
-                        <span>{data.price}</span>
-                        <span className="text-xs text-gray-600">تومان</span>
+                        <span className="text-sm">{data.price}</span>
+                        <span className="text-xs  font-light">تومان</span>
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                    <div className="flex items-center gap-1 text-xs  font-light">
                         <span>{data.time}</span>
                         <span>{data.date}</span>
                     </div>

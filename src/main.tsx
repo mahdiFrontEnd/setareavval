@@ -5,10 +5,10 @@ import './assets/styles/index.css';
 import {AppProviders} from './AppProviders';
 
 
-
-import { registerSW } from 'virtual:pwa-register';
-
-registerSW();
+//
+// import { registerSW } from 'virtual:pwa-register';
+//
+// registerSW();
 
 
 createRoot(document.getElementById('root')!).render(

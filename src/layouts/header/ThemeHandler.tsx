@@ -1,5 +1,6 @@
 import Button from "../../components/microComponents/Button.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import Cookies from 'js-cookie';
 
 const ThemeHandler = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -13,21 +14,29 @@ const ThemeHandler = () => {
         } else {
             root.classList.add("dark-theme");
         }
-
+        Cookies.set('darkMode', !darkMode,{expires: 1000})
         setDarkMode(!darkMode);
     };
+
+    useEffect(() => {
+        const themeValue = Cookies.get('darkMode');
+        if(themeValue !== `${darkMode}`){
+            toggleTheme()
+        }
+    }, []);
+
 
 
     return (
         <div className="flex justify-end">
             <Button
+                backgroundColor="var(--content-bg)"
                 onClick={toggleTheme}
-                backgroundColor="white"
                 color="var(--text-color)"
                 className="px-6!"
                 size="md"
                 variant="outline"
-                borderColor="var(--primery-color)">
+                borderColor="var(--primary-color)">
                 {darkMode ? "دارک مود" : "لایت مود"}
             </Button>
         </div>

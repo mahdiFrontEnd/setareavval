@@ -10,7 +10,7 @@ const NavigationBarItem = ({icon, text}:NavigationBarItemPropsType) => {
     return (
         <div className="flex justify-center items-center  gap-2">
             {icon}
-            <span className="text-sm">{text}</span>
+            <span className="text-sm font-light">{text}</span>
         </div>
     );
 };

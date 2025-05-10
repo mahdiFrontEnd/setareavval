@@ -57,10 +57,12 @@ const sizeValues = {
     md: css`
         font-size: 10px;
         padding: 4px 12px;
+        font-weight: 400;
     `,
     lg: css`
         font-size: 14px;
         padding: 2px 12px;
+        font-weight: 400;
     `,
     xxl: css`
         font-size: 18px;
@@ -71,11 +73,10 @@ const sizeValues = {
 const ButtonStyled = styled.button<StyledProps>`
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: ${({ $backgroundColor = 'white' }) => $backgroundColor};
-
-    ${({ radius = 'full' }) => radiusValues[radius]};
-    ${({ variant = 'solid' }) => variants[variant]};
-    ${({ size = 'md' }) => sizeValues[size]};
+    background-color: ${({$backgroundColor = 'white'}) => $backgroundColor};
+    ${({radius = 'full'}) => radiusValues[radius]};
+    ${({variant = 'solid'}) => variants[variant]};
+    ${({size = 'md'}) => sizeValues[size]};
 
     &:hover {
         opacity: 0.9;

@@ -11,9 +11,9 @@ const Header = () => {
         <div className="grid grid-cols-3 items-center p-6">
             <div>
                 <Button backgroundColor="transparent" variant="ghost"><IconForward
-                    color="var(--primery-color)"/></Button>
+                    color="var(--primary-color)"/></Button>
             </div>
-            <Heading color="var(--primery-color)" size="lg" weight="bold" align="center">
+            <Heading color="var(--primary-color)" size="lg" weight="bold" align="center">
                 تراکنش‌ها
             </Heading>
            <ThemeHandler/>
